@@ -39,7 +39,8 @@
 #
 # enjoy keeping CMakeLists.txt up to date.
 #
-# cmake -G "Ninja Multi-Config" -S source -B build
+# cmake -B ../build -S . -G "Ninja Multi-Config" -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
+#
 # cmake --build build --config Release or Debug or RelWithDebInfo ...
 #
 # to build whatever you need. if you are using emacs with eglot
@@ -47,6 +48,7 @@
 # it parked in source by symlinking to the generated file that
 # ends up in ../build/. i have no idea what to do for vscode
 # or other editor/ide compinations.
+
 
 cmake_minimum_required(VERSION 3.5)
 
