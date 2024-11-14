@@ -1,0 +1,91 @@
+# i have a nonstandard approach to gitignore. see below.
+
+# ignore all files then unignore files with extensions and all
+# directories, i know most people don't do it this way, but i'm not
+# most people. generally files without extensions are binaries or
+# something otherwise transient.
+
+*
+!*.*
+!*/
+
+
+# unignore the unextensioned license/readme/make files
+
+!LICENSE
+!UNLICENSE
+!README
+!COPYING
+!makefile
+!Makefile
+!Dockerfile
+
+# i leave notes in directories with by touching empty files with
+# either a leading space or leading _. yeah, but it works for me.
+
+!\ ?*
+!_?*
+
+# transient artifacts and file system helpers, along with binaries
+# that shouldn't be versioned.
+#
+# note: build/ is here
+
+.cache/
+a.out
+*.dSYM/
+*.d
+build/
+*.o
+*.so
+*.lst
+*.map
+*.log
+.DS_Store
+.DS_Store?
+._*
+*~
+.#*
+\#*#
+
+
+# packages and archives
+
+*.7z
+*.gz
+*.iso
+*.tar
+*.zip
+
+
+# database files probably shouldn't be versioned
+
+*.db
+*.sqlite
+
+
+# side-notes (emacs package) files should stay local,
+# these are the names i use for them.
+
+side-notes.txt
+general-side-notes.txt
+
+
+# build system artifacts:
+#  [Mm]akefile is project by project exclusion
+#  build directories are project by project inclusion
+
+*.ninja
+.ninja*
+*.d
+compile_comands.json
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+CMakeUserPresets.json
