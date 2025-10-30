@@ -1,0 +1,73 @@
+# i have a nonstandard approach to gitignore. see below.
+
+# ignore all files then unignore files with extensions and all
+# directories, i know most people don't do it this way, but i'm not
+# most people. generally files without extensions are binaries or
+# something otherwise transient.
+
+*
+!*.*
+!*/
+
+# unignore the unextensioned license/readme/make files
+
+!LICENSE
+!UNLICENSE
+!README
+!COPYING
+!makefile
+!Makefile
+!Dockerfile
+
+# unignore configs and scripts for Pascal. 
+
+!.*.cfg
+!*.cfg
+!pasc
+!pfmt
+
+# i leave notes in directories with by touching empty files with
+# either a leading space or leading _. yeah, but it works for me.
+
+!\ ?*
+!_?*
+
+# transient artifacts and file system helpers, along with binaries
+# that shouldn't be versioned.
+#
+# note: build/ is here
+
+.cache/
+a.out
+*.dSYM/
+*.d
+build/
+*.o
+*.so
+*.lst
+*.map
+*.log
+.DS_Store
+.DS_Store?
+._*
+*~
+.#*
+\#*#
+.ppu
+
+
+# packages and archives
+
+*.7z
+*.gz
+*.iso
+*.tar
+*.zip
+
+
+# database files probably shouldn't be versioned
+
+*.db
+*.sqlite
+
+
